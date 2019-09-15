@@ -1,0 +1,25 @@
+name: Example usage
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        uses: actions/checkout@v1
+
+      -
+        uses: horochx/deploy-via-scp@master
+        with:
+          local: README.md
+          remote: ${{ secrets.REMOTE }}
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          user: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}

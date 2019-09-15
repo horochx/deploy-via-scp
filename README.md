@@ -1,5 +1,42 @@
-# Container Action Template
+# deploy-via-scp
 
-To get started, click the `Use this template` button on this repository [which will create a new repository based on this template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/).
+A GitHub Action that send the build file to a remote server for deployment via scp.
 
-For info on how to build your first Container action, see the [toolkit docs folder](https://github.com/actions/toolkit/blob/master/docs/container-action.md).
+## Inputs
+
+### `local`
+
+**Required** Local file path.
+
+### `remote`
+
+**Required** Remote file path.
+
+### `host`
+
+**Required** Remote server address.
+
+### `port`
+
+**Required** Remote server port. Default `22`.
+
+### `user`
+
+**Required** Remote server user.
+
+### `key`
+
+**Required** Remote server private key, use `\n` to escape line breaks.
+
+## Example usage
+
+```yaml
+uses: horochx/deploy-via-scp@master
+with:
+  local: localPath # eg: dist
+  remote: ${{ secrets.REMOTE }} # eg: /home/github-action
+  host: ${{ secrets.HOST }} # eg: example.com
+  port: ${{ secrets.PORT }} # eg: 22
+  user: ${{ secrets.USER }} # eg: github-action
+  key: ${{ secrets.KEY }} # eg: -----BEGIN OPENSSH PRIVATE KEY-----\nHEIiyzh5cT7hN...
+```
