@@ -33,8 +33,8 @@ A GitHub Action that send the build file to a remote server for deployment via s
 ```yaml
 uses: horochx/deploy-via-scp@master
 with:
-  local: localPath # eg: dist
-  remote: ${{ secrets.REMOTE }} # eg: /home/github-action
+  local: localPath # eg: dist/*
+  remote: ${{ secrets.REMOTE }} # eg: /home/github-action/www
   host: ${{ secrets.HOST }} # eg: example.com
   port: ${{ secrets.PORT }} # eg: 22
   user: ${{ secrets.USER }} # eg: github-action
