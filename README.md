@@ -18,7 +18,7 @@ A GitHub Action that send the build file to a remote server for deployment via s
 
 ### `port`
 
-**Required** Remote server port. Default `22`.
+**Optional** Remote server port. Default `22`.
 
 ### `user`
 
