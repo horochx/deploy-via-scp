@@ -28,6 +28,10 @@ A GitHub Action that send the build file to a remote server for deployment via s
 
 **Required** Remote server private key, use `\n` to escape line breaks.
 
+### `ensureRemote`
+
+**Optional** Ensure the existance of the remote file path
+
 ## Example usage
 
 ```yaml
