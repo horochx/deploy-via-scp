@@ -29,6 +29,10 @@ inputs:
     description: 'Remote server private key'
     required: true
 
+  ensureRemote:
+    description: 'Ensure the existance of the remote file path'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
